@@ -36,20 +36,20 @@
 
     require([
           "esri/map",
-          "esri/layers/ArcGISDynamicMapServiceLayer",
+          "esri/layers/FeatureLayer",
           "esri/layers/ImageParameters",
           "dojo/domReady!"
         ],
-        function (Map, ArcGISDynamicMapServiceLayer, ImageParameters) {
+        function (Map, FeatureLayer, ImageParameters) {
 
           map = new Map("mapDiv", {
             basemap: "streets",
-            center: [-98.258, 38.236],
+            center: [-72, 42],
             zoom: 7
           });
 
           // Create a new layer and add that layer to the map.
-          var lyr = new ArcGISDynamicMapServiceLayer("http://stg.tsstools.com/arcgis/rest/services/txdot/lrs/MapServer");
+          var lyr = new FeatureLayer("http://stg.tsstools.com/arcgis/rest/services/txdot/test/MapServer/4");
           map.addLayer(lyr);
         });
   </script>
